@@ -315,6 +315,15 @@ static void keyboard_handle_key(void *data, struct wl_keyboard *wl_keyboard,
 			seat->touch_selection.has_selection = false;
 			state->edit_anchor = false;
 			state->running = false;
+			printf("esc pressed\n");
+			break;
+		
+		case XKB_KEY_Tab:
+			seat->pointer_selection.has_selection = false;
+			seat->touch_selection.has_selection = false;
+			state->edit_anchor = false;
+			state->running = false;
+			printf("tab pressed\n");
 			break;
 
 		case XKB_KEY_space:
