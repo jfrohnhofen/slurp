@@ -318,6 +318,12 @@ static void keyboard_handle_key(void *data, struct wl_keyboard *wl_keyboard,
 	case WL_KEYBOARD_KEY_STATE_PRESSED:
 		switch (keysym) {
 		case XKB_KEY_Escape:
+			printf("esc pressed\n");
+			handle_selection_cancelled(seat);
+			break;
+		
+		case XKB_KEY_Tab:
+			printf("tab pressed\n");
 			handle_selection_cancelled(seat);
 			break;
 
